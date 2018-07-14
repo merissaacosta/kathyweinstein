@@ -1,0 +1,69 @@
+body.header-fixed #contact {
+    margin-top: 110px
+}
+
+#contactHead {
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 800px
+}
+
+#contactHead h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 1em;
+    font-family: 'Cardo', serif
+}
+
+#contactBody h4 {
+    text-align: center
+}
+
+#contactBody p {
+    font-family: 'Lato', sans-serif;
+    text-align: center;
+    margin-bottom: .3em
+}
+
+#contactBody .cb-wrap {
+    background-color: rgba(255, 255, 255, 0.75);
+    border: solid 4px #afccce;
+    padding: 2rem;
+    margin-top: -23rem;
+    margin-bottom: 10em
+}
+
+#contactBody h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1em
+}
+
+#wpcf7-f280-o2 .name {
+    margin-right: 4%
+}
+
+#wpcf7-f280-o2 .name,
+#wpcf7-f280-o2 .email {
+    width: 48%;
+    float: left;
+    border: solid #afccce 1px
+}
+
+#wpcf7-f280-o2 .message {
+    width: 100%;
+    height: 100px;
+    margin-top: 1em;
+    border: solid #afccce 1px
+}
+
+#wpcf7-f280-o2 .wpcf7-submit {
+    background-color: #fff;
+    color: #afccce;
+    border: 1px solid #afccce
+}
+
+#wpcf7-f280-o2 .wpcf7-submit:hover {
+    background-color: #afccce;
+    color: #fff;
+    cursor: pointer
+}

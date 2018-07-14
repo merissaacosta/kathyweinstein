@@ -1,0 +1,51 @@
+body.header-fixed #biography {
+  margin-top: 110px;
+}
+
+#biography {
+    padding-bottom: 8rem
+}
+
+#bioHead {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 6rem 0 14rem 0;
+    background-color: #f5f5f5
+}
+
+#bioHead .bh-left img {
+    width: 100%;
+    height: auto
+}
+
+#bioHead .bh-right {
+    text-align: center;
+    margin-top: -70px
+}
+
+#bioHead .bh-right p {
+    font-family: 'Lato', sans-serif;
+    background-color: #afccce;
+    color: #fff;
+    padding: 5px 20px;
+    display: inline
+}
+
+#bioHead .bh-right h1 {
+    font-family: 'Cardo', serif;
+    margin-top: 40px;
+    color: #555
+}
+
+#bioBody .bb-wrap {
+    border: solid 4px #afccce;
+    padding: 2rem;
+    margin-top: -8rem;
+    background-color: #fff
+}
+
+#bioBody .bb-wrap p {
+    margin-bottom: 0px
+}
