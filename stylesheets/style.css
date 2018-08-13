@@ -207,9 +207,9 @@ body h4, body h5, body p {
 
 /* line 52, ../sass/_header.scss */
 .comp-row {
-  background-color: #F8F8F8;
-  padding-top: .7rem;
-  padding-bottom: .7rem;
+  background-color: #afccce;
+  padding: 0;
+  color: #fff;
 }
 /* line 56, ../sass/_header.scss */
 .comp-row p {
@@ -229,24 +229,37 @@ body h4, body h5, body p {
 .comp-row .comp-right p {
   margin-bottom: 0px;
 }
-/* line 73, ../sass/_header.scss */
+/* line 72, ../sass/_header.scss */
+.comp-row .wpcf7-form {
+  color: #000;
+}
+/* line 74, ../sass/_header.scss */
 .comp-row .wpcf7-form .wpcf7-submit {
   background-color: #fff;
   color: #afccce;
   border: 1px solid #afccce;
   height: 26px;
+  width: 100%;
 }
-/* line 78, ../sass/_header.scss */
+/* line 80, ../sass/_header.scss */
 .comp-row .wpcf7-form .wpcf7-submit:hover {
   background-color: #afccce;
   color: #fff;
 }
-/* line 83, ../sass/_header.scss */
-.comp-row .wpcf7-form .wpcf7-email {
+/* line 85, ../sass/_header.scss */
+.comp-row .wpcf7-form .wpcf7-email, .comp-row .wpcf7-form .wpcf7-text {
   border: 1px solid #afccce;
 }
+/* line 88, ../sass/_header.scss */
+.comp-row .wpcf7-form .wpcf7-text {
+  margin-bottom: 14px;
+}
+/* line 91, ../sass/_header.scss */
+.comp-row .wpcf7-form .wpcf7-email {
+  margin-bottom: 20px;
+}
 
-/* line 90, ../sass/_header.scss */
+/* line 98, ../sass/_header.scss */
 body.header-fixed nav {
   position: fixed;
   top: 0;
@@ -259,39 +272,184 @@ body.header-fixed nav {
   flex-direction: row;
   height: 50px;
 }
-/* line 101, ../sass/_header.scss */
+/* line 109, ../sass/_header.scss */
 body.header-fixed nav .navbar-nav {
   margin: 0px;
   margin-left: auto;
   font-size: 14px;
 }
-/* line 106, ../sass/_header.scss */
+/* line 114, ../sass/_header.scss */
 body.header-fixed nav li {
   margin: 0px 15px;
 }
-/* line 110, ../sass/_header.scss */
+/* line 118, ../sass/_header.scss */
+body.header-fixed .comp-row {
+  position: fixed;
+  width: 102%;
+  z-index: 2;
+  top: 50px;
+  left: 0;
+}
+/* line 125, ../sass/_header.scss */
 body.header-fixed .homeCarousel {
   margin-top: 70px;
 }
-/* line 113, ../sass/_header.scss */
+/* line 128, ../sass/_header.scss */
 body.header-fixed #wrapper-navbar nav {
   padding: 0 1rem;
 }
-/* line 115, ../sass/_header.scss */
+/* line 130, ../sass/_header.scss */
 body.header-fixed #wrapper-navbar nav .logo {
   width: 40px;
 }
-/* line 118, ../sass/_header.scss */
+/* line 133, ../sass/_header.scss */
 body.header-fixed #wrapper-navbar nav .navbar-nav li {
   margin: 0px 15px;
 }
 
-/* line 124, ../sass/_header.scss */
+/* line 139, ../sass/_header.scss */
 .navbar .dropdown-menu li {
   width: 100%;
   margin-left: 0 !important;
 }
 
+/**
+ * Variables
+ */
+/* line 154, ../sass/_header.scss */
+.comp-modal-button {
+  display: block;
+  margin: auto;
+  width: 100%;
+  background-color: #afccce;
+  border: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: .2s;
+}
+/* line 163, ../sass/_header.scss */
+.comp-modal-button:hover {
+  background-color: #8fb8bb;
+  cursor: pointer;
+}
+/* line 167, ../sass/_header.scss */
+.comp-modal-button:focus {
+  outline: none;
+}
+
+/**
+ * Overlay
+ * -- only show for tablet and up
+ */
+@media only screen and (min-width: 40em) {
+  /* line 178, ../sass/_header.scss */
+  .comp-modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  }
+  /* line 194, ../sass/_header.scss */
+  .comp-modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+/**
+ * Modal
+ */
+/* line 204, ../sass/_header.scss */
+.comp-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 600px;
+  max-width: 75rem;
+  min-height: 20rem;
+  padding: 1rem;
+  border-radius: 3px;
+  opacity: 0;
+  overflow-y: auto;
+  visibility: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  backface-visibility: hidden;
+  transform: scale(1.2);
+  transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+}
+/* line 224, ../sass/_header.scss */
+.comp-modal .comp-close-modal {
+  position: absolute;
+  cursor: pointer;
+  top: 5px;
+  right: 15px;
+  opacity: 0;
+  backface-visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.3s;
+}
+/* line 234, ../sass/_header.scss */
+.comp-modal .comp-close-modal svg {
+  width: 1.75em;
+  height: 1.75em;
+}
+/* line 240, ../sass/_header.scss */
+.comp-modal .comp-modal-content {
+  opacity: 0;
+  backface-visibility: hidden;
+  transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+  transition-delay: 0.3s;
+}
+/* line 247, ../sass/_header.scss */
+.comp-modal.active {
+  visibility: visible;
+  opacity: 1;
+  transform: scale(1);
+}
+/* line 252, ../sass/_header.scss */
+.comp-modal.active .comp-modal-content {
+  opacity: 1;
+}
+/* line 256, ../sass/_header.scss */
+.comp-modal.active .comp-close-modal {
+  transform: translateY(10px);
+  opacity: 1;
+}
+
+/**
+ * Mobile styling
+ */
+@media only screen and (max-width: 39.9375em) {
+  /* line 269, ../sass/_header.scss */
+  .comp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+    transform: scale(1.1);
+    padding: 0 !important;
+  }
+
+  /* line 281, ../sass/_header.scss */
+  .comp-close-modal {
+    right: 20px !important;
+  }
+}
 /* line 3, ../sass/_homepage.scss */
 body .navbar {
   flex-direction: column;

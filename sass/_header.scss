@@ -50,9 +50,9 @@
 }
 
 .comp-row {
-  background-color: #F8F8F8;
-  padding-top: .7rem;
-  padding-bottom: .7rem;
+  background-color: #afccce;
+  padding: 0;
+  color: #fff;
   p {
     font-size: 14px;
   }
@@ -70,18 +70,26 @@
     }
   }
   .wpcf7-form {
+    color: #000;
     .wpcf7-submit {
       background-color: #fff;
       color: #afccce;
       border: 1px solid #afccce;
       height: 26px;
+      width: 100%;
       &:hover {
         background-color: #afccce;
         color: #fff;
       }
     }
-    .wpcf7-email {
+    .wpcf7-email, .wpcf7-text {
         border: 1px solid #afccce;
+    }
+    .wpcf7-text {
+      margin-bottom: 14px;
+    }
+    .wpcf7-email {
+      margin-bottom: 20px;
     }
   }
 }
@@ -107,6 +115,13 @@ body.header-fixed {
         margin: 0px 15px;
     }
   }
+  .comp-row {
+    position: fixed;
+    width: 102%;
+    z-index: 2;
+    top: 50px;
+    left: 0;
+  }
   .homeCarousel {
     margin-top: 70px;
   }
@@ -125,3 +140,145 @@ body.header-fixed {
     width: 100%;
     margin-left: 0 !important;
 }
+
+// MODAL
+
+/**
+ * Variables
+ */
+$button-bg: #0D52E9;
+$speed: 0.6s;
+$delay: ($speed * .5);
+$easing: cubic-bezier(.55,0,.1,1);
+
+.comp-modal-button {
+  display: block;
+  margin: auto;
+  width: 100%;
+  background-color: #afccce;
+  border: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: .2s;
+  &:hover {
+    background-color: darken(#afccce, 10%);
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+
+/**
+ * Overlay
+ * -- only show for tablet and up
+ */
+@media only screen and (min-width: 40em) {
+
+  .comp-modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    background-color: rgba(#000, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    backface-visibility: hidden;
+    transition: opacity $speed $easing, visibility $speed $easing;
+
+    &.active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+} // media query
+
+/**
+ * Modal
+ */
+.comp-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 0 auto;
+  background-color: #fff;
+  width: 600px;
+  max-width: 75rem;
+  min-height: 20rem;
+  padding: 1rem;
+  border-radius: 3px;
+  opacity: 0;
+  overflow-y: auto;
+  visibility: hidden;
+  box-shadow: 0 2px 10px rgba(#000, 0.1);
+  backface-visibility: hidden;
+  transform: scale(1.2);
+  transition: all $speed $easing;
+
+  .comp-close-modal {
+    position: absolute;
+    cursor: pointer;
+    top: 5px;
+    right: 15px;
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: opacity $speed $easing, transform $speed $easing;
+    transition-delay: $delay;
+
+    svg {
+      width: 1.75em;
+      height: 1.75em;
+    }
+  } // close modal
+
+  .comp-modal-content {
+    opacity: 0;
+    backface-visibility: hidden;
+    transition: opacity $speed $easing;
+    transition-delay: $delay;
+  } // content
+
+  &.active {
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+
+    .comp-modal-content {
+      opacity: 1;
+    }
+
+    .comp-close-modal {
+      transform: translateY(10px);
+      opacity: 1;
+    }
+  }
+}
+
+/**
+ * Mobile styling
+ */
+@media only screen and (max-width: 39.9375em) {
+
+
+  .comp-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 0;
+    transform: scale(1.1);
+    padding: 0 !important;
+  }
+
+  .comp-close-modal {
+    right: 20px !important;
+  }
+} // media query

@@ -23,13 +23,15 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 				<main class="site-main" id="main" role="main">
 
+					<h1>Babies & Maternity</h1>
+
 					<!-- gallery start -->
 
 
 							<?php
 								// get posts
 								$posts = get_posts(array(
-									'post_type'			=> 'children-families',
+									'post_type'			=> 'babies-maternity',
 									'posts_per_page'	=> -1,
 									'orderby'			=> 'meta_value',
 									'order'				=> 'DESC'

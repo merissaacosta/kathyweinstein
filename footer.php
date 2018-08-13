@@ -33,6 +33,7 @@
 </div><!-- #page -->
 
 <script src="/wp-content/themes/olympos/js/main.js"></script>
+<script src="/wp-content/themes/olympos/js/modal.js"></script>
 
 	<?php wp_footer(); ?>
 </body>

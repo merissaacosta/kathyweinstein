@@ -57,15 +57,18 @@
           <a class="dropdown-item" href="/?page_id=54">Children & Families</a>
           <a class="dropdown-item" href="/?page_id=177">Dance</a>
           <a class="dropdown-item" href="/?page_id=95">Personal Branding</a>
-          <a class="dropdown-item" href="#">Babies & Maternity</a>
-          <a class="dropdown-item" href="#">Portrait Paintings</a>
+          <a class="dropdown-item" href="/?page_id=286">Babies & Maternity</a>
+          <a class="dropdown-item" href="/?page_id=288">Portrait Paintings</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Portrait Guide</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="//shop.kathleenweinsteinphotography.com/RedCart/#7c1209">Client</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Blog</a>
+        <a class="nav-link" href="#">Charitable Giving</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/?page_id=9">Contact</a>
@@ -79,12 +82,25 @@
 
 
 <div class="row comp-row">
-	<div class="col-sm-6 comp-left">
-		<p>Enter email address for a complimentary consultation</p>
-	</div>
-	<div class="col-sm-6 comp-right">
-		<?php echo do_shortcode('[contact-form-7 id="30" title="Complimentary Consultation Email"]'); ?>
-	</div>
+
+    <button class="comp-modal-button">Book a Complimentary Session</button>
+
+      <!-- modal -->
+      <div class="comp-modal-overlay">
+        <div class="comp-modal">
+
+          <a class="comp-close-modal">
+            <svg viewBox="0 0 20 20">
+              <path fill="#000000" d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+            </svg>
+          </a><!-- close modal -->
+
+          <div class="comp-modal-content">
+            <?php echo do_shortcode('[contact-form-7 id="30" title="Complimentary Consultation Email"]'); ?>
+          </div><!-- content -->
+
+        </div><!-- modal -->
+      </div><!-- overlay -->
 </div>
 
 
